@@ -41,7 +41,7 @@ posts: list[dict] = [
                 Весь этот день я хлопотал  около вещей: укрывал и
                 укутывал их, чтобы не испортились от дождя.''',
     },
-] 
+]
 
 
 def index(request):
@@ -52,15 +52,15 @@ def index(request):
 
 def post_detail(request, id):
     template = 'blog/detail.html'
-    post = posts[int(id)] 
+    post = posts[int(id)]
     context = {'post': post}
     return render(request, template, context)
 
 
 def category_posts(request, category_slug):
     template = 'blog/category.html'
-    context = { 
-        'category_slug': category_slug, 
-        'posts': posts 
+    context = {
+        'category_slug': category_slug,
+        'posts': posts
     }
     return render(request, template, context)
